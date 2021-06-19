@@ -1,6 +1,2 @@
-output "id" { value = data.docker_registry_image.image.sha256_digest }
+output "id" { value = docker_image.image.latest }
 output "name" { value = docker_image.image.name }
-
-output "image" {
-  value = docker_image.image
-}
