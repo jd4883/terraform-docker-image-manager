@@ -1,0 +1,1 @@
+data "docker_registry_image" "image" { name = local.tagged_name }
