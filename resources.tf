@@ -16,6 +16,5 @@ resource "docker_image" "image" {
       target = try(build.value.target, [])
     }
   }
-  build         = var.build
   pull_triggers = [data.docker_registry_image.image.sha256_digest]
 }
