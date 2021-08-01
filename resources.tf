@@ -11,6 +11,7 @@ resource "docker_image" "image" {
       force_remove = try(build.value.force_remove, true)
       label = try(build.value.label, {})
       no_cache = try(build.value.no_cache, true)
+      path = try(build.value.path, ".")
       remove = try(build.value.remove, true)
       tag = try(build.value.tag, [])
       target = try(build.value.target, [])
