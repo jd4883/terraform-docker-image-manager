@@ -1,5 +1,9 @@
 variable "image" { type = string }
-variable "build" { default = {} }
+
+variable "build" {
+  type    = map(string)
+  default = {}
+}
 
 variable "keep_locally" {
   type    = bool
