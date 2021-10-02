@@ -4,7 +4,6 @@ resource "docker_image" "image" {
   keep_locally = var.keep_locally
   dynamic "build" {
     for_each = var.build
-    # TODO: this segment can be better done without try
     content {
       build_arg    = lookup(build.value, "build_arg", {})
       dockerfile   = lookup(build.value, "dockerfile", "Dockerfile")
